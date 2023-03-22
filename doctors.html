@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ doctor[1] }}</title>
+</head>
+<body>
+  <h1>{{ doctor[1] }}</h1>
+  <ul>
+    <li>Specialty: {{ doctor[2] }}</li>
+    <li>Location: {{ doctor[3] }}</li>
+    <li>Review Score: {{ doctor[4] }}</li>
+  </ul>
+  {% if similar_doctors %}
+    <h2>Similar Doctors</h2>
+    <ul>
+      {% for similar_doctor in similar_doctors %}
+        <li><a href="/doctor/{{ similar_doctor[0] }}">{{ similar_doctor[1] }} ({{ similar_doctor[2] }})</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
